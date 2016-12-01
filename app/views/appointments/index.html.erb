@@ -1,3 +1,12 @@
+<div class="flash">
+  <% if flash[:message] %>
+    <div class="flash-message">
+      <button type="button" class="close" data-dismiss="alert">&times;</button>
+      <%= flash[:message] %>
+    </div>
+  <% end %>
+</div>
+
 <div class="appointment-scheduler">
   <h1 class="header">Appointment Scheduler</h1>
 </div>

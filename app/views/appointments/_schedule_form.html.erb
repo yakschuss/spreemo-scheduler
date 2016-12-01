@@ -1,8 +1,8 @@
 <div class="form">
   <%= form_for :appointment, url: appointments_path, method: :post do |f| %>
   <div class="input-fields">
-    <%= f.select(:patients, Patient.all.collect {|p| "#{p.first_name} #{p.last_name}"}, {}, {class: "patient-select"})  %>
-    <%= f.select(:ailments, Ailment.all.collect {|a| a.ailment_name}, {}, {class: "ailment-select"})  %>
+    <%= f.select(:patient, Patient.all.collect {|p| ["#{p.first_name} #{p.last_name}", p.id]}, {}, {class: "patient-select"})  %>
+    <%= f.select(:ailment, Ailment.all.collect {|a| [a.ailment_name, a.id]}, {}, {class: "ailment-select"})  %>
 
   </div>
   <div class="input-submit">

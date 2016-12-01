@@ -14,7 +14,9 @@ class AppointmentScheduler
 
     #this will create the time at the time of scheduling - needs fixing
 
-    Appointment.create!(appointment_time: appointment_time, doctor: doctor, patient: patient)
+   appointment =  Appointment.create!(appointment_time: appointment_time, doctor: doctor, patient: patient)
+
+   return appointment
   end
 
   private
