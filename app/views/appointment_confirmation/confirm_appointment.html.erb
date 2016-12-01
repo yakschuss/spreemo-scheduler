@@ -1,0 +1,9 @@
+<div>
+  <h1>Thanks for scheduling your appointment!</h1>
+
+  <p><%= @patient.first_name %>, </p>
+
+  <p>Your appointment is scheduled for <%= "#{@appointment_day}, #{@appointment_month} #{@appointment_time.day}" %>, at <%= "#{@appointment_time.hour}:#{@appointment_time.min}" %></p>
+
+  <p><%= "#{@doctor.name}'s office is located at #{@doctor.street}, #{@doctor.city}, #{@doctor.state}, #{@doctor.zip}" %></p>
+</div>
