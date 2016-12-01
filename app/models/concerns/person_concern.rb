@@ -62,16 +62,16 @@ module PersonConcern
     def validate_each(record, attribute, value)
       unless value =~ /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i
         record.errors[attribute] <<
-          (options[:message] || "is not a valid email address")
+          (options[:message] || 'is not a valid email address')
       end
     end
   end
 
-  class ZipCodeValidator< ActiveModel::EachValidator
+  class ZipCodeValidator < ActiveModel::EachValidator
     def validate_each(record, attribute, value)
       unless value =~ /^\d{5}(-\d{4})?$/
         record.errors[attribute] <<
-          (options[:message] || "is not a valid zip code")
+          (options[:message] || 'is not a valid zip code')
       end
     end
   end
@@ -92,7 +92,7 @@ module PersonConcern
     validates :street, presence: true
     validates :city, presence: true
     validates :state, presence: true, inclusion: { in: VALID_STATES,
-                                                   message: "is not a US State"}
+                                                   message: 'is not a US State' }
     validates :zip, presence: true, zip_code: true
   end
 end
