@@ -1,0 +1,12 @@
+<div class="form">
+  <%= form_for :appointment, url: appointments_path, method: :post do |f| %>
+  <div class="input-fields">
+    <%= f.select(:patients, Patient.all.collect {|p| "#{p.first_name} #{p.last_name}"}, {}, {class: "patient-select"})  %>
+    <%= f.select(:ailments, Ailment.all.collect {|a| a.ailment_name}, {}, {class: "ailment-select"})  %>
+
+  </div>
+  <div class="input-submit">
+    <%= f.submit "Schedule!", class: "submit-button" %>
+  </div>
+<% end %>
+</div>

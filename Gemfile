@@ -38,6 +38,7 @@ group :development, :test do
 
   # Use FactoryGirl for seed and test models
   gem 'factory_girl_rails', '~> 4.0'
+  gem "pry-rails"
 
   # Use Faker for seed and test data
   gem 'faker', '~> 1.6.3'
